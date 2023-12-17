@@ -1,4 +1,5 @@
 import { Grid, GridItem, Show } from '@chakra-ui/react';
+import NavBar from './components/NavBar';
 
 function App() {
   return (
@@ -11,7 +12,7 @@ function App() {
       }}
       gap={0}
     >
-      <GridItem gridArea="nav" bg="coral">NAV</GridItem>
+      <GridItem gridArea="nav"><NavBar></NavBar></GridItem>
 
       {/* Show 'ASIDE' only on larger screens (lg and above) */}
       <Show above='lg'>
