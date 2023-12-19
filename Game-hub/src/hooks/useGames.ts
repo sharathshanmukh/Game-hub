@@ -23,14 +23,23 @@ interface GamesData{
 const useGames=()=>{
     const[game,setGames]=useState<Game[]>([]);
     const[err,setErr]=useState('');
+    const[isLoading,setLoading]=useState(true)
+    // console.log(isLoading)
     useEffect(()=>{
         const controller=new AbortController();
         apiClient.get<GamesData>('/games',{signal:controller.signal})
-      .then(res=>setGames(res.data.results))
-      .catch(err=>{ if (err instanceof CanceledError) return;
-        setErr(err.message)})
+      .then(res=>{setGames(res.data.results)
+       setLoading(false)
+        // console.log(isLoading)
+    })
+      .catch(err=>{
+         if (err instanceof CanceledError) return;
+        setErr(err.message)
+        setLoading(false)
+        
+    })
       return ()=>controller.abort()
     },[]);
-    return {game,err};
+    return {game,err,isLoading};
 }
 export default useGames;
