@@ -28,7 +28,8 @@ const PlatformiconList = ({platform}:Props) => {
   return (
 
 
-    <HStack>{platform.map(p=><Icon color='gray.500'as={iconMap[p.slug]} key={p.slug}/>)}
+    <HStack marginY={1}>
+        {platform.map(p=><Icon color='gray.500'as={iconMap[p.slug]} key={p.slug}/>)}
     {/* {platform.map(p => {
                 // Check if the key exists in the iconMap
                 const IconComponent = iconMap[p.slug as keyof typeof iconMap];
