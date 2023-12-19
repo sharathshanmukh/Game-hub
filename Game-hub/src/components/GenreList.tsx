@@ -1,12 +1,14 @@
-import React from 'react';
+import { Text } from '@chakra-ui/react'
 import useGenre from '../hooks/useGenre';
 
 const GenreList = () => {
-    const { genre, err, isLoading } = useGenre();
+    const { data, err, isLoading } = useGenre();
     return (
         <>
+                {err && <Text>{err}</Text>}
+
         <ul>
-            {genre.map(g=>
+            {data.map(g=>
                 <li key={g.id}>{g.name}</li>)}
         </ul>
         </>
