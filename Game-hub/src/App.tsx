@@ -13,13 +13,16 @@ function App() {
         base: '"nav" "main"',
         lg: '"nav nav" "aside main"'
       }}
+      templateColumns={{base:'1fr',lg:'200px 1fr'}
+        
+      }
       gap={0}
     >
       <GridItem gridArea="nav"><NavBar></NavBar></GridItem>
 
       {/* Show 'ASIDE' only on larger screens (lg and above) */}
       <Show above='lg'>
-        <GridItem gridArea="aside" >
+        <GridItem gridArea="aside" paddingX={5}>
           <GenreList></GenreList>
         </GridItem>
       </Show>
