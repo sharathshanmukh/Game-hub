@@ -23,7 +23,7 @@ const PlatformSelector = ({splat,onselectPlatform}:Props) => {
                 {/* MenuItems go here */}
                 {data.map(d=><MenuItem onClick={()=>{
                   onselectPlatform(d)
-                  setSp(d)
+                  // setSp(d)
                 
                 }} key={d.id}>{d.name}</MenuItem>)}
               </MenuList>
