@@ -30,7 +30,6 @@ const GameGrid = ({gameQuery}:Props) => {
         </SimpleGrid>
             
         
-    // <div>GameGrid</div>
     </>
   )
 }
