@@ -17,7 +17,7 @@ const SortSelector = ({sortSel,selected}:Props) => {
         
     ]
     const current_sor_or=sortorders.find(o=>o.value==selected)
-    console.log(current_sor_or)
+    // console.log(current_sor_or)
   return (
     <Menu>
     <MenuButton as={Button} rightIcon={<BsChevronBarDown />}>

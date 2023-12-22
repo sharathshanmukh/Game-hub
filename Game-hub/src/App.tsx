@@ -8,6 +8,7 @@ import { Genre } from './hooks/useGenre';
 import PlatformSelector from './components/PlatformSelector';
 import { Platform } from './hooks/useGames';
 import SortSelector from './components/SortSelector';
+import SearchInput from './components/SearchInput';
 
 export interface GameQuery{
   genre:Genre |null,
@@ -47,7 +48,7 @@ function App() {
       </Show>
 
       <GridItem gridArea="main" bg="">
-        <HStack justify='centre' spacing={5} marginBottom='2px' paddingLeft={10}>
+      <HStack justify='centre' spacing={5} marginBottom='2px' paddingLeft={10}>
         <PlatformSelector splat={gamequery.platform} onselectPlatform={(platform)=>setGamequery({...gamequery,platform})}></PlatformSelector>
         <SortSelector selected= {gamequery.sort_order}sortSel={(sort_order)=>setGamequery({...gamequery,sort_order})}></SortSelector>
         </HStack>
