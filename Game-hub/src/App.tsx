@@ -13,14 +13,15 @@ import SearchInput from './components/SearchInput';
 export interface GameQuery{
   genre:Genre |null,
   platform:Platform| null,
-  sort_order:string
+  sort_order:string,
+  searchText:string,
 
 }
 function App() {
   // const [selectedGenre,setSelectedGenre]=useState<Genre| null>(null);
   // const [selectedPlatform,setSelectedPlatform]=useState<Platform | null>(null);
   // const[gamequery,SetGamequery]=useState<GameQuery>({} as GameQuery)
-  const [gamequery, setGamequery] = useState<GameQuery>({ genre: null, platform: null,sort_order:"" });
+  const [gamequery, setGamequery] = useState<GameQuery>({ genre: null, platform: null,sort_order:"",searchText:" " });
 
   //  useEffect(() => {
   //   console.log(selectedGenre);
@@ -38,7 +39,7 @@ function App() {
       }
       gap={0}
     >
-      <GridItem gridArea="nav"><NavBar></NavBar></GridItem>
+      <GridItem gridArea="nav"><NavBar onsearch={(s:string)=>{setGamequery({...gamequery,searchText:s})}}></NavBar></GridItem>
 
       {/* Show 'ASIDE' only on larger screens (lg and above) */}
       <Show above='lg'>
