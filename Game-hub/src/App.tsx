@@ -12,13 +12,14 @@ import SortSelector from './components/SortSelector';
 export interface GameQuery{
   genre:Genre |null,
   platform:Platform| null,
+  sort_order:string
 
 }
 function App() {
   // const [selectedGenre,setSelectedGenre]=useState<Genre| null>(null);
   // const [selectedPlatform,setSelectedPlatform]=useState<Platform | null>(null);
   // const[gamequery,SetGamequery]=useState<GameQuery>({} as GameQuery)
-  const [gamequery, setGamequery] = useState<GameQuery>({ genre: null, platform: null });
+  const [gamequery, setGamequery] = useState<GameQuery>({ genre: null, platform: null,sort_order:"" });
 
   //  useEffect(() => {
   //   console.log(selectedGenre);
@@ -48,7 +49,7 @@ function App() {
       <GridItem gridArea="main" bg="">
         <HStack justify='centre' spacing={5} marginBottom='2px' paddingLeft={10}>
         <PlatformSelector splat={gamequery.platform} onselectPlatform={(platform)=>setGamequery({...gamequery,platform})}></PlatformSelector>
-        <SortSelector></SortSelector>
+        <SortSelector selected= {gamequery.sort_order}sortSel={(sort_order)=>setGamequery({...gamequery,sort_order})}></SortSelector>
         </HStack>
 
         <GameGrid gameQuery={gamequery}></GameGrid>
