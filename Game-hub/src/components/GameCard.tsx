@@ -1,6 +1,5 @@
-import React from 'react'
 import { Game } from '../hooks/useGames'
-import { Card , Image, Heading, CardBody,HStack, Badge} from '@chakra-ui/react'
+import { Card , Image, Heading, CardBody,HStack,} from '@chakra-ui/react'
 import PlatformiconList from './PlatformiconList'
 import CriticScore from './CriticScore'
 import { getCroppedImageUrl } from '../services/image-url'

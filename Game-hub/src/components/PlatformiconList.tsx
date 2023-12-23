@@ -3,10 +3,9 @@ import {FaWindows,FaPlaystation
 import { Platform } from '../hooks/useGames'
 import {MdPhoneIphone} from 'react-icons/md'
 import {SiNintendo} from 'react-icons/si'
-import {BsGlobe} from 'react-icons/bs'
 import { IconType } from 'react-icons'
 
-import { Card , Image, Heading, CardBody,Text,Icon,HStack} from '@chakra-ui/react'
+import { Icon,HStack} from '@chakra-ui/react'
 
 interface Props{
     platform:Platform[]
